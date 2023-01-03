@@ -1,0 +1,131 @@
+/*Desktop css */
+.contactContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-family: mainFont;
+  flex-wrap: nowrap;
+  width: 100%;
+  padding-bottom: 5em;
+
+}
+.contactTitle{
+  font-size: 2em;
+  text-align: center;
+  margin: 15px 0;
+  text-decoration: underline;
+
+}
+.faq{
+  flex-basis: 45%;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.faqTitle{
+  font-size: 1.7em;
+  text-align: center;
+}
+.faqContainer{
+    flex-basis: 90%;
+    list-style: none;
+}
+#template{
+  display: none;
+}
+.questionAnswer{
+  border: solid blue 4px;
+  margin-top: 1px;
+}
+.questionContainer{
+  background-color: #9AD0B7;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.question{
+  text-align: center;
+  flex-basis: 90%;
+  font-size: 1.3em;
+}
+.carrot{
+  font-size: 1.4em;
+  cursor: pointer;
+}
+/* toggled by js to display answers to faq */
+.open{
+  display: block;
+}
+.closed{
+  display: none;
+}
+.answer{
+  text-align: center;
+  font-size: 1.2em
+}
+.contactForm{
+  width: auto;
+  /* Fits shadow in body */
+  height: 90%;
+  /* Share space with FAq */
+  flex-basis: 45%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+  border: solid black 2px;
+  /*shadow Styling (Corelangs.com/css/box/shadow.html)*/
+  /*Black shadowed border  */
+    box-shadow: 0px 10px  5px rgba(0,0,0,0.6);
+    -moz-box-shadow: 0px 10px  50px  rgba(0,0,0,0.6);
+    -webkit-box-shadow: 0px 10px 50px  rgba(0,0,0,0.6);
+    -o-box-shadow: 0px 10px 50px  rgba(0,0,0,0.6);
+     background-color: white;
+}
+.contactForm label{
+  flex-basis: 100%;
+  font-size: 1.4em;
+  text-decoration: underline;
+}
+.contactForm input {
+  background-color:  #FFF8E7;
+  flex-basis: 90%;
+  width: 100%;
+  height: 2.6em;
+  font-size: 1.3em;
+  margin-top: 5px;
+}
+.message{
+  margin-top: 5px;
+  font-size: 1.3em;
+  flex-basis: 90%;
+  width: 90%;
+  background-color:  #FFF8E7;
+  margin-bottom: 15px;
+  resize:none;
+
+}
+/*Tablet and mobile CSS*/
+@media (max-width: 810px){
+  .contactContainer{
+    border: solid red 2px;
+    /* put form on top of faw */
+    flex-direction: column-reverse;
+  }
+  .contactForm{
+    /* remove shadow */
+    box-shadow: 0;
+    margin-bottom: 7px;
+    flex-basis: 100%;
+  }
+  .faq{
+    flex-basis: 100%;
+  }
+  .faqContainer{
+    margin-left: 6%;
+  }
+
+}

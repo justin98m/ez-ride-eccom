@@ -1,0 +1,24 @@
+/* Files css is used on every html page */
+html{
+  background-color: #FFF8E7;
+  color: black;
+}
+body{
+  min-height: 100vh;
+  position: relative;
+}
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/*fonts for entire website
+@font-face {
+  font-family: navFont;
+  src: url(Peralta-Regular.ttf);
+}
+@font-face {
+  font-family: mainFont;
+  src: url(Lora-VariableFont_wght.ttf);
+}
+*/

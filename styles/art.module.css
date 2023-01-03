@@ -1,0 +1,34 @@
+/*this page in Inherently responsive so no media queries neeeded*/
+
+.artworkContainer{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+/* Some images are really tall so fixing height creates even spacing
+among elements
+ */
+.artworkImage{
+  width : auto;
+  height: 270px;
+}
+/* border and shadow styling of artwork */
+.artwork{
+  border: solid #9AD0B7 8px;
+  border-radius: 25px;
+  margin-top: 4%;
+  /*shadow Styling (Corelangs.com/css/box/shadow.html)*/
+  box-shadow: 10px 0px 5px  rgba(0,0,0,0.6);
+  -moz-box-shadow: 10px 0px 5px  rgba(0,0,0,0.6);
+  -webkit-box-shadow: 10px 0px 5px  rgba(0,0,0,0.6);
+  -o-box-shadow: 10px 0px 5px  rgba(0,0,0,0.6);
+  background-color: #FFF8E7;
+}
+/* smaller images for mobil*/
+@media (max-width: 500px){
+  .artworkImage{
+    width : 350px;
+    height: auto;
+  }
+}
