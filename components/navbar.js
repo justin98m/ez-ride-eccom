@@ -1,7 +1,7 @@
 import styles from './navbar.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
-import ezRideLogo from '../public/nohandsgif.gif';
+import ezRideLogo from '../public/ezRideLogo.webp';
 import {useState} from 'react';
 
 function handleHamburgerClick(mobileBarStatus,updateHam){
@@ -11,10 +11,10 @@ function handleHamburgerClick(mobileBarStatus,updateHam){
   updateHam(styles.active);
 }
 
-export default function NavBar(){
+export default function NavBar({currentPage}){
   const [mobileBarStatus,updateHam] = useState(null);
   let navBarMobile = (
-    <nav className={styles.nav}>
+    <>
       <Link className={styles.navLink+" "+styles.mobileLogo} href="/">
         <Image src={ezRideLogo} className={styles.ezRideLogo} alt="bike logo"/>
         <span className={styles.backupTitle+" "+styles.companyName}>EzRide</span>
@@ -25,24 +25,28 @@ export default function NavBar(){
         <span className={styles.hamburgerBar}></span>
         <span className={styles.hamburgerBar}></span>
       </div>
-    </nav>
+    </>
       );
 
   return(
-  <header className="navContainer">
-    <nav className="nav">
+  <header className={styles.navContainer}>
+    <nav className={styles.nav}>
       <ul className={styles.navMenu + " " + mobileBarStatus}>
         <section className={styles.navLeft}>
           <li className={styles.navListItem}>
-            <Link className={styles.navLink +" "+ styles.active} href="/">
+            <Link className={styles.navLink +" "+
+          (currentPage == '/' ? styles.active : null)} href="/">
               Home
             </Link>
           </li>
           <li className={styles.navListItem}>
-            <Link className={styles.navLink}  href="/products">Bikes</Link>
+            <Link className={styles.navLink +" "+
+            (currentPage == '/products' ? styles.active : null) }href="/products">Bikes</Link>
           </li>
           <li className={styles.navListItem}>
-            <Link className={styles.navLink} href="/contact">Contact US</Link>
+            <Link className={styles.navLink +" "+
+             (currentPage == '/contact' ? styles.active : null)}
+             href="/contact">Contact US</Link>
           </li>
         </section>
         <Link className={styles.navCenter+" "+styles.navLink} href="/">
@@ -53,7 +57,9 @@ export default function NavBar(){
         </Link>
         <section className={styles.navRight}>
           <li className={styles.navListItem}>
-            <Link className={styles.navLink} href="/art">Art</Link>
+            <Link className={styles.navLink +" "+
+            (currentPage == '/art' ? styles.active : null)}
+             href="/art">Art</Link>
           </li>
         </section>
       </ul>

@@ -33,7 +33,7 @@ export default function Home() {
 
   return (
 
-    <Layout title="EZ Ride Home">
+    <Layout title="EZ Ride Home" currentPage='/'>
     <main className={styles.mainContainer}>
       <div className={styles.slideshow}>
         <button type="button" onClick={()=> setIndex(decreaseIndex(index))} className={styles.arrow + " " +  styles.left}>←</button>

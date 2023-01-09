@@ -11,15 +11,15 @@ import oldFashioned from '/public/artwork/womens1897bike.jpeg';
 let artwork = [bicycleNun,boy,kakashi,skeletons,toadFrog,oldFashioned];
 
 export default function contact(){
-  let domArtwork = artwork.map((work)=>{
+  let domArtwork = artwork.map((work,i)=>{
     return (
-      <div className={styles.artwork}>
+      <div key = {i} className={styles.artwork}>
         <Image className={styles.artworkImage} src={work} />
       </div>
     );
   });
   return (
-    <Layout>
+    <Layout title="Bike Art" currentPage="/art">
       <div className={styles.artworkContainer}>
         {domArtwork}
       </div>

@@ -5,7 +5,7 @@ import Footer from './footer.js';
 import NavBar, {NavBarMobile} from './navbar.js';
 
 
-export default function Layout({ children, title }) {
+export default function Layout({ children, title, currentPage }) {
   return (
     <>
       <Head>
@@ -16,7 +16,7 @@ export default function Layout({ children, title }) {
       </Head>
       <div className="page-container">
         <div className ="content-wrap">
-          <NavBar></NavBar>
+          <NavBar currentPage={currentPage}></NavBar>
           {/* Children represents the called page component */}
           {children}
           </div>

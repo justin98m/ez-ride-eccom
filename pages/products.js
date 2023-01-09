@@ -50,7 +50,7 @@ export  default function Products({productList}){
       const[productFilter,dispatch] = useReducer(productHelper.productReducer, initialFilter);
       //console.log(`Coming from Product Component ${JSON.stringify(productFilter)}`);
       return(
-        <Layout>
+        <Layout title="Bikes & Gear" currentPage="/products">
           <header className={styles.title}>Bikes & Gear</header>
           <FilterUI filterState={productFilter} dispatch={dispatch}/>
           <main className={styles.productContainer}>

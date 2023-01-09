@@ -7,7 +7,7 @@ import twitterLogo from '../public/social-media-logos/twitterLogo.png'
 import tiktokLogo from '../public/social-media-logos/tiktokLogo.png'
 import facebookLogo from '../public/social-media-logos/facebookLogo.png'
 import instagramLogo from '../public/social-media-logos/instaLogo.png'
-import ezRideLogo from '../public/nohandsgif.gif';
+import ezRideLogo from '../public/ezRideLogo.webp';
 
 export default function Footer(){
   return(
@@ -19,7 +19,8 @@ export default function Footer(){
           <Link className={styles.footerLink} href="/art"><li className={styles.footerListItem}>Art</li></Link>
         </section>
         <section className={styles.footerCenter}>
-          <a className={styles.footerLink} target="_blank" href="https://www.twitter.com">
+          <a className={styles.footerLink} target="_blank" rel="noreferrer"
+           href="https://www.twitter.com">
             <li className={styles.footerListItem}>
               <Image className={styles.socialIcon}
                 src={twitterLogo}
@@ -27,7 +28,8 @@ export default function Footer(){
               />
             </li>
           </a>
-          <a className={styles.footerLink} target="_blank" href="https://www.instagram.com">
+          <a className={styles.footerLink} target="_blank" rel="noreferrer"
+           href="https://www.instagram.com">
             <li className={styles.footerListItem}>
               <Image className={styles.socialIcon}
                 src={instagramLogo}
@@ -35,14 +37,16 @@ export default function Footer(){
               />
             </li>
           </a>
-          <a className={styles.footerLink} target="_blank" href="https://www.tiktok.com">
+          <a className={styles.footerLink} target="_blank" rel="noreferrer"
+          href="https://www.tiktok.com">
             <li className={styles.footerListItem}>
               <Image className={styles.socialIcon}
                 src={tiktokLogo}
                 alt="tik tok Logo"
               />            </li>
           </a>
-          <a className={styles.footerLink} target="_blank" href="https://www.facebook.com">
+          <a className={styles.footerLink} target="_blank" rel="noreferrer"
+          href="https://www.facebook.com">
             <li className={styles.footerListItem}>
               <Image className={styles.socialIcon}
                 src={facebookLogo}

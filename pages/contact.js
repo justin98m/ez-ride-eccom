@@ -4,7 +4,7 @@ import faqList from '../public/faq.json';
 
 export default function Contact(){
   return (
-    <Layout>
+    <Layout title="Contact Us" currentPage='/contact'>
       <main className={styles.contactContainer}>
       <FAQ/>
         <form className={styles.contactForm} action="contact">
@@ -24,9 +24,9 @@ export default function Contact(){
 function FAQ(){
 
   console.log(faqList.faq);
-  let faqDomList = faqList.faq.map((QA) =>{
+  let faqDomList = faqList.faq.map((QA,i) =>{
     return (
-        <li className={styles.questionAnswer}>
+        <li key={i} className={styles.questionAnswer}>
           <div className={styles.questionContainer}>
             <p className={styles.question}>{QA.question}</p>
             <p className={styles.carrot}>&#8964;</p>
