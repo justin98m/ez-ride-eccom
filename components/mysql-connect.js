@@ -1,24 +1,24 @@
 import mysql from "mysql2";
 
-// const con = mysql.createConnection({
-//         //should be a hidden env var
-//         connectionLimit:5,
-//         host: process.env.MYSQLENDPTLOCAL,
-//         user: process.env.MYSQLUSERLOCAL,
-//         password: process.env.MYSQLPASSLOCAL,
-//         database: process.env.DATABASELOCAL,
-//       }
-// );
-console.log(process.env.MYSQLENDPTREMOTE);
 const con = mysql.createConnection({
         //should be a hidden env var
         connectionLimit:5,
-        host: process.env.MYSQLENDPTREMOTE,
-        user: process.env.MYSQLUSERREMOTE,
-        password: process.env.MYSQLPASSREMOTE,
-        database: process.env.DATABASEREMOTE,
+        host: process.env.MYSQLENDPTLOCAL,
+        user: process.env.MYSQLUSERLOCAL,
+        password: process.env.MYSQLPASSLOCAL,
+        database: process.env.DATABASELOCAL,
       }
 );
+// console.log(process.env.MYSQLENDPTREMOTE);
+// const con = mysql.createConnection({
+//         //should be a hidden env var
+//         connectionLimit:5,
+//         host: process.env.MYSQLENDPTREMOTE,
+//         user: process.env.MYSQLUSERREMOTE,
+//         password: process.env.MYSQLPASSREMOTE,
+//         database: process.env.DATABASEREMOTE,
+//       }
+// );
 
 
 export default function query(sql){

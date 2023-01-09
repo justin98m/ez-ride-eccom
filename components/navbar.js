@@ -2,27 +2,36 @@ import styles from './navbar.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
 import ezRideLogo from '../public/nohandsgif.gif';
+import {useState} from 'react';
 
-export function NavBarMobile(){
-    return (
-      <nav className="nav">
-        <Link className={styles.navLink+" "+styles.mobileLogo} href="/">
-          <Image src={ezRideLogo} className={styles.ezRideLogo} alt="bike logo"/>
-          <span className={styles.backupTitle+" "+styles.companyName}>EzRide</span>
-        </Link>
-        <div className={styles.hamburger}>
-          <span className={styles.hamburgerBar}></span>
-          <span className={styles.hamburgerBar}></span>
-          <span className={styles.hamburgerBar}></span>
-        </div>
-      </nav>
-        );
-
+function handleHamburgerClick(mobileBarStatus,updateHam){
+  if(mobileBarStatus){
+    updateHam(null);
+  }
+  updateHam(styles.active);
 }
+
 export default function NavBar(){
-  return (
+  const [mobileBarStatus,updateHam] = useState(null);
+  let navBarMobile = (
+    <nav className={styles.nav}>
+      <Link className={styles.navLink+" "+styles.mobileLogo} href="/">
+        <Image src={ezRideLogo} className={styles.ezRideLogo} alt="bike logo"/>
+        <span className={styles.backupTitle+" "+styles.companyName}>EzRide</span>
+      </Link>
+      <div className={styles.hamburger + " " + mobileBarStatus}
+       onClick={() => handleHamburgerClick(mobileBarStatus,updateHam)}>
+        <span className={styles.hamburgerBar}></span>
+        <span className={styles.hamburgerBar}></span>
+        <span className={styles.hamburgerBar}></span>
+      </div>
+    </nav>
+      );
+
+  return(
+  <header className="navContainer">
     <nav className="nav">
-      <ul className={styles.navMenu}>
+      <ul className={styles.navMenu + " " + mobileBarStatus}>
         <section className={styles.navLeft}>
           <li className={styles.navListItem}>
             <Link className={styles.navLink +" "+ styles.active} href="/">
@@ -30,7 +39,7 @@ export default function NavBar(){
             </Link>
           </li>
           <li className={styles.navListItem}>
-            <Link className={styles.navLink} href="/products">Bikes</Link>
+            <Link className={styles.navLink}  href="/products">Bikes</Link>
           </li>
           <li className={styles.navListItem}>
             <Link className={styles.navLink} href="/contact">Contact US</Link>
@@ -38,7 +47,7 @@ export default function NavBar(){
         </section>
         <Link className={styles.navCenter+" "+styles.navLink} href="/">
           <li className={styles.navListItem}>
-            <Image className={styles.ezRideLogo} alt="bike logo"/>
+            <Image src={ezRideLogo} className={styles.ezRideLogo} alt="bike logo"/>
           </li>
           <li className={styles.navListItem+" "+styles.companyName}>EzRide</li>
         </Link>
@@ -48,6 +57,8 @@ export default function NavBar(){
           </li>
         </section>
       </ul>
+      {navBarMobile}
     </nav>
+    </header>
       );
       }

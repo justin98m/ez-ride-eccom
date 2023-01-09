@@ -34,11 +34,13 @@ export default function Home() {
   return (
 
     <Layout title="EZ Ride Home">
-      <div className="slideshow">
+    <main className={styles.mainContainer}>
+      <div className={styles.slideshow}>
         <button type="button" onClick={()=> setIndex(decreaseIndex(index))} className={styles.arrow + " " +  styles.left}>←</button>
         <Image className={styles.currentImg} src={slideImg[index]} alt=""/>
         <button type="button" onClick={()=> setIndex(increaseIndex(index))} className={styles.arrow +" "+ styles.right}>→</button>
       </div>
+      </main>
     </Layout>
   );
 }
