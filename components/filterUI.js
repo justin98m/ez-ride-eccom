@@ -24,7 +24,7 @@ export default function FilterUI({filterState,dispatch}){
   return(
     <div className={styles.filter}>
       <p className={styles.filterTitle}> Produtct Filter </p>
-      <div className={styles.filteBtnContainer}>
+      <div className={styles.filterBtnContainer}>
         <button type="button" className={styles.filterBtn+ " "+
           (filterState.isAscending ?  styles.active : styles.inactive)}
           onClick={() => handlelowToHigh(dispatch)}>Low To High

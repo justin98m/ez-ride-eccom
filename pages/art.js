@@ -10,7 +10,7 @@ import oldFashioned from '/public/artwork/womens1897bike.jpeg';
 
 let artwork = [bicycleNun,boy,kakashi,skeletons,toadFrog,oldFashioned];
 
-export default function contact(){
+export default function art(){
   let domArtwork = artwork.map((work,i)=>{
     return (
       <div key = {i} className={styles.artwork}>
