@@ -1,23 +1,12 @@
 import styles from '../styles/Contact.module.css';
 import Layout from '../components/layout.js';
-export default function contact(){
+import faqList from '../public/faq.json';
+
+export default function Contact(){
   return (
     <Layout>
       <main className={styles.contactContainer}>
-        <section className={styles.faq}>
-          <header className={styles.faqTitle}>Frequently Asked Questions</header>
-          <ul className={styles.faqContainer}>
-            <li className={styles.questionAnswer} id="template">
-              <div className={styles.questionContainer}>
-                <p className={styles.question}></p>
-                <p className={styles.carrot}>&#8964;</p>
-              </div>
-              <div className={styles.answerContainer+" "+styles.closed} >
-                <p className={styles.answer}></p>
-              </div>
-            </li>
-          </ul>
-        </section>
+      <FAQ/>
         <form className={styles.contactForm} action="contact">
           <label for="fName">First Name</label>
           <input type="text" name="fName"placeholder="Name" required/>
@@ -32,3 +21,28 @@ export default function contact(){
     </Layout>
   );
       }
+function FAQ(){
+
+  console.log(faqList.faq);
+  let faqDomList = faqList.faq.map((QA) =>{
+    return (
+        <li className={styles.questionAnswer}>
+          <div className={styles.questionContainer}>
+            <p className={styles.question}>{QA.question}</p>
+            <p className={styles.carrot}>&#8964;</p>
+          </div>
+          <div className={styles.answerContainer+" "+styles.open} >
+            <p className={styles.answer}>{QA.answer}</p>
+          </div>
+        </li>
+  )
+  });
+  return(
+    <section className={styles.faq}>
+      <header className={styles.faqTitle}>Frequently Asked Questions</header>
+      <ul className={styles.faqContainer}>
+        {faqDomList}
+      </ul>
+    </section>
+  )
+}

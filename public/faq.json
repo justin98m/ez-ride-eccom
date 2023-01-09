@@ -1,0 +1,26 @@
+{
+  "faq": [
+
+    {
+      "question" : "How long does it take for my puchase to get to me?",
+      "answer" : "Within the United States accessory only will arrive in 3 - 5 days. Any purchase with a bike will take 5 - 7 days to arrive"
+    },
+    {
+        "question" : "Do I need a mechanic to assembly my bike?",
+        "answer" : "No! If you know how to turn an allen key and a wrench you can assemble you bike yourself. The bike is 80% built upon arrival"
+      },
+    {
+        "question" : "What is your return policy?",
+        "answer" : "We are confident you will love your ride. We give customers 90 days to return their ride if they don't like it for any reason"
+      },
+    {
+        "question" : "Where is your shipping warehouse based?",
+        "answer" : "Charlotte, North Carolina"
+      },
+    {
+        "question" : "Do you sell new bikes?",
+        "answer" : "No, we buy , fix up and resell bikes to you. This allows us to sell good products for cheaper prices"
+      }
+
+    ]
+}
