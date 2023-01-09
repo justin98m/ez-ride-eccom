@@ -15,7 +15,7 @@ export default function Layout({ children, title }) {
       </Head>
       <NavBar></NavBar>
       {/* Children represents the called page component */}
-      <main>{children}</main>
+      {children}
       <Footer></Footer>
     </>
 
