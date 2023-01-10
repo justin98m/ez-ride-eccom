@@ -1,16 +1,17 @@
 import Image from 'next/image';
 import Layout from '../components/layout.js';
 import styles from '../styles/products.module.css'
-import dbQuery from '../components/mysql-connect.js'
 import {useReducer} from 'react';
 import productHelper from '../components/productHelper.js';
 import FilterUI from '../components/filterUI.js';
 
 export async function getStaticProps(){
-  const data = await dbQuery("select * from products");
-  return {
+
+    let data = await fetch('http://localhost:3000/api/products')
+    let productList = await data.json();
+    return {
     props : {
-      productList : data.result
+      productList : productList.result
     }
   }
 }
